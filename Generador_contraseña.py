@@ -1,15 +1,15 @@
 #crear un generador de contraseña, indicando el largo minimo, largo maximo, caracteres especiales
 from random import choice as ch
 
-def crearContraseña(numero, validador):
+def crearContraseña(numero, validador): #Ingresa el número máximo de carácteres y si debe tener simbolos o no
     Contraseña = ""
     i = 1
-    if validador == "no": #Se genera contraseña sin caracteres especiales
+    if validador == "no": #Se genera contraseña SIN caracteres especiales
         while i <= numero:
             Contraseña = Contraseña + ch(ABCD)
             i += 1
 
-    elif validador == "si": #Se genera contraseña con caracteres especiales
+    elif validador == "si": #Se genera contraseña CON caracteres especiales
         dificil = ABCD+especial
 
         while i <= numero:
@@ -24,10 +24,13 @@ ABCD =["A","a","B","b","C","c","D","d","E","e","F","f","H","h","I","i","J","j","
 try:
     maxLargo = int(input('Indica cual es el máximo de carácteres: '))
     correcto = False
-    while correcto == False:
-        esp = input("Con carácteres especiales, indique si o no: ")
-        if esp == "si" or esp =="no":
-            nuevaContraseña=crearContraseña(maxLargo,esp)
+
+    while correcto == False: #Validación para que se ingrese de manera forzada si y no
+        esp = input("Con carácteres especiales, indique si o no: ").lower()
+
+        if esp == "si" or esp =="no": #Validador para la función creada
+
+            nuevaContraseña = crearContraseña(maxLargo,esp) #Genera la contraseña con la función creada
             print("La contraseña generada es : ", nuevaContraseña)
             print("El largo de la contraseña es :", len(nuevaContraseña))
             correcto = True
