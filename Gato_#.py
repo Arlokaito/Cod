@@ -42,7 +42,7 @@ def win(jugador, gano = False): #revisa si se cumple la combinación ganadora al
         jugador
         gano = True 
     
-    elif ubicacion[2][1] == ubicacion[5][1] and ubicacion[2][1] == ubicacion[7][1]:
+    elif ubicacion[2][1] == ubicacion[5][1] and ubicacion[2][1] == ubicacion[8][1]:
         jugador
         gano = True 
 
