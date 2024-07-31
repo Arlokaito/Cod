@@ -140,6 +140,3 @@ while contador <= 9:
 
 if win(P1) == False:
     print("No hay ganador.")
-
-#hola
-print("prueba")
